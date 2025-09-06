@@ -64,7 +64,7 @@ const Dashboard: React.FC = () => {
     );
   }
 
-  // Group stocks by sector
+  // ################3#  Group stocks by sector #####################
   const stocksBySector = stocks.reduce<Record<string, Stock[]>>((acc, stock) => {
     const sector = stock.sector || "Unknown Sector";
     if (!acc[sector]) acc[sector] = [];
@@ -80,14 +80,12 @@ const Dashboard: React.FC = () => {
 
   {Object.entries(stocksBySector).map(([sector, sectorStocks]) => (
     <div key={sector} className="mb-12">
-      {/* Sector Header */}
       <div className="mb-4">
         <h2 className="text-xl font-semibold text-gray-700 border-b border-gray-300 pb-2">
           {sector}
         </h2>
       </div>
 
-      {/* Stock Table */}
       <div className="overflow-x-auto rounded-lg shadow bg-white border border-gray-200">
         <table className="min-w-full text-sm text-left text-gray-700">
           <thead className="bg-gray-100 text-gray-600 text-xs uppercase tracking-wider">
