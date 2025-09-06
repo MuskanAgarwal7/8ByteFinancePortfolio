@@ -14,6 +14,6 @@ const limiter = rateLimit({
 
 })
 
-router.get("/", limiter, cache('15 seconds'), getAllStockData);
+router.get("/stocks", limiter, cache('15 seconds'), getAllStockData);
 
 module.exports = router;
